@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon Radio Site</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+</head>
+
+<body>
+
+    <!-- import html navbar -->
+    {% include 'navbar.html' %}
+
+    <!-- <main> -->
+    <main>
+
+        <section>
+            <div class="grid_relases">
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image2.png') }}" alt="Image 2">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image3.png') }}" alt="Image 3">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+            </div>
+
+            <div class="link-releases">
+                <a href="{{ url_for('releases') }}">> > [All releases here] < <</a>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="box-paragraph">
+                <div class="text-paragraph">
+                    <h4>01-01-2025 : [DR004] Duplate pack Vol.I</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box-paragraph">
+                <div class="text-paragraph">
+                    <h4>01-01-2025 : [DR004] Duplate pack Vol.I</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+
+            <div class="link-blog">
+                <a href="{{ url_for('blog') }}">> > [All articles here] < <</a>
+            </div>
+        </section>
+
+        <section>
+            <div class="grid-events">
+                <div class="box-event">
+                    <img src="{{ url_for('static',filename='images/event_1.png') }}" alt="Event 1">
+                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
+                </div>
+                <div class="box-event">
+                    <img src="{{ url_for('static',filename='images/event_2.png') }}" alt="Event 2">
+                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
+                </div>
+                <div class="box-event">
+                    <img src="{{ url_for('static',filename='images/event_3.png') }}" alt="Event 3">
+                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
+                </div>
+                <div class="box-event">
+                    <img src="{{ url_for('static',filename='images/event_1.png') }}" alt="Event 1">
+                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
+                </div>
+            </div>
+
+            <div class="link-events">
+                <a href="{{ url_for('events') }}">> > [All events here] < <</a>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    {% include 'footer.html' %}
+
+    <script src="{{ url_for('static',filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

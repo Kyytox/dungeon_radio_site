@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon Radio Site</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+</head>
+
+<body>
+
+    <!-- import html navbar -->
+    {% include 'navbar.html' %}
+
+    <!-- <main> -->
+    <main>
+
+        <section>
+            <div class="grid_relases">
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image2.png') }}" alt="Image 2">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image3.png') }}" alt="Image 3">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image2.png') }}" alt="Image 2">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image3.png') }}" alt="Image 3">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+                <div class="box-release">
+                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
+                    <h4>[DR004] Duplate pack Vol.I</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+
+    <!-- import html footer -->
+    {% include 'footer.html' %}
+
+    <script src="{{ url_for('static',filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

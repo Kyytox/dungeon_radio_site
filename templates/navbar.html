@@ -1,0 +1,26 @@
+<header>
+    <nav>
+        <ul class="logo">
+            <img src="{{ url_for('static',filename='images/logo.png') }}" alt="Image 1">
+        </ul>
+
+        <ul class="menu">
+            <ul class="menu-item">
+                <li class="title">DUNGEON RADIO</li>
+            </ul>
+            <ul class="menu-item">
+                <li>Versatile label since 2017</li>
+            </ul>
+            <ul class="menu-item">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('releases') }}">Releases</a></li>
+                <li><a href="{{ url_for('events') }}">Events</a></li>
+                <li><a href="{{ url_for('blog') }}">Archives</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </ul>
+        <ul class="logo">
+            <img src="{{ url_for('static',filename='images/logo.png') }}" alt="Image 1">
+        </ul>
+    </nav>
+</header>
