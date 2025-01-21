@@ -219,9 +219,15 @@ footer {
     color: white;
     display: flex;
     width: 100%;
+    margin-top: 40px;
     background-color: #2E3037;
     align-items: center;
     justify-content: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
 }
 
 .footer-container {
