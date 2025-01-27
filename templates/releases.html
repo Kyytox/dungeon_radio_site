@@ -9,47 +9,20 @@
 </head>
 
 <body>
-
-    <!-- import html navbar -->
     {% include 'navbar.html' %}
-
-    <!-- <main> -->
     <main>
-
         <section>
             <div class="grid_relases">
+                <!-- Data Releases -->
+                {% for release in releases_data %}
                 <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
+                    <a href="{{ release.Link }}" target="_blank">
+                        <img src="{{ url_for('static', filename='images/' + release.Image) }}"
+                            alt="{{ release.Titre }}">
+                        <h4>{{ release.Titre }}</h4>
+                    </a>
                 </div>
-                <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image2.png') }}" alt="Image 2">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
-                </div>
-                <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image3.png') }}" alt="Image 3">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
-                </div>
-                <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
-                </div>
-                <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
-                </div>
-                <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image2.png') }}" alt="Image 2">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
-                </div>
-                <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image3.png') }}" alt="Image 3">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
-                </div>
-                <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
-                </div>
+                {% endfor %}
             </div>
         </section>
     </main>

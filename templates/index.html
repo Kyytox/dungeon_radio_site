@@ -18,79 +18,37 @@
 
         <section>
             <div class="grid_relases">
+                <!-- Data Releases -->
+                {% for release in releases_data %}
                 <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
+                    <a href="{{ release.Link }}" target="_blank">
+                        <img src="{{ url_for('static', filename='images/' + release.Image) }}"
+                            alt="{{ release.Titre }}">
+                        <h4>{{ release.Titre }}</h4>
+                    </a>
                 </div>
-                <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image2.png') }}" alt="Image 2">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
-                </div>
-                <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image3.png') }}" alt="Image 3">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
-                </div>
-                <div class="box-release">
-                    <img src="{{ url_for('static',filename='images/image1.png') }}" alt="Image 1">
-                    <h4>[DR004] Duplate pack Vol.I</h4>
-                </div>
+                {% endfor %}
             </div>
 
             <div class="link-releases">
                 <a href="{{ url_for('releases') }}">> > [All releases here] < <</a>
             </div>
-
         </section>
 
         <section>
-            <div class="box-paragraph">
-                <div class="text-paragraph">
-                    <h4>01-01-2025 : [DR004] Duplate pack Vol.I</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-            </div>
+
+            <!-- Data Blog -->
+            {% for blog in blog_data %}
 
             <div class="box-paragraph">
                 <div class="text-paragraph">
-                    <h4>01-01-2025 : [DR004] Duplate pack Vol.I</h4>
+                    <h4>{{ blog.Date }} : {{ blog.Titre }}</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        {{ blog.Text }}
                     </p>
                 </div>
             </div>
+            {% endfor %}
 
             <div class="link-blog">
                 <a href="{{ url_for('blog') }}">> > [All articles here] < <</a>
@@ -98,23 +56,15 @@
         </section>
 
         <section>
+
+            <!-- Data Blog -->
             <div class="grid-events">
+                {% for events in events_data %}
                 <div class="box-event">
-                    <img src="{{ url_for('static',filename='images/event_1.png') }}" alt="Event 1">
-                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
+                    <img src="{{ url_for('static', filename='images/' + events.Image) }}" alt="{{ events.Titre }}">
+                    <h4>{{ events.Date }} : {{ events.Titre }}</h4>
                 </div>
-                <div class="box-event">
-                    <img src="{{ url_for('static',filename='images/event_2.png') }}" alt="Event 2">
-                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
-                </div>
-                <div class="box-event">
-                    <img src="{{ url_for('static',filename='images/event_3.png') }}" alt="Event 3">
-                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
-                </div>
-                <div class="box-event">
-                    <img src="{{ url_for('static',filename='images/event_1.png') }}" alt="Event 1">
-                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
-                </div>
+                {% endfor %}
             </div>
 
             <div class="link-events">

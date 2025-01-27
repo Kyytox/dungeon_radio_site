@@ -9,31 +9,16 @@
 </head>
 
 <body>
-
-    <!-- import html navbar -->
     {% include 'navbar.html' %}
-
-    <!-- <main> -->
     <main>
-
         <section>
             <div class="grid-events">
+                {% for events in events_data %}
                 <div class="box-event">
-                    <img src="{{ url_for('static',filename='images/event_1.png') }}" alt="Event 1">
-                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
+                    <img src="{{ url_for('static', filename='images/' + events.Image) }}" alt="{{ events.Titre }}">
+                    <h4>{{ events.Date }} : {{ events.Titre }}</h4>
                 </div>
-                <div class="box-event">
-                    <img src="{{ url_for('static',filename='images/event_2.png') }}" alt="Event 2">
-                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
-                </div>
-                <div class="box-event">
-                    <img src="{{ url_for('static',filename='images/event_3.png') }}" alt="Event 3">
-                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
-                </div>
-                <div class="box-event">
-                    <img src="{{ url_for('static',filename='images/event_1.png') }}" alt="Event 1">
-                    <h4>01-01-2025 : [Reggae Dub Session]</h4>
-                </div>
+                {% endfor %}
             </div>
 
         </section>
