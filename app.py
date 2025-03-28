@@ -108,9 +108,9 @@ def events():
     return render_template("events.html", events_data=data_events)
 
 
-# @app.route("/contact")
-# def contact():
-#     return render_template("contact.html")
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":
