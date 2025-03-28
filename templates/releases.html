@@ -11,9 +11,9 @@
 <body>
     {% include 'navbar.html' %}
     <main>
+        <!-- Data Releases -->
         <section>
             <div class="grid_relases">
-                <!-- Data Releases -->
                 {% for release in releases_data %}
                 <div class="box-release">
                     <a href="{{ release.Link }}" target="_blank">
