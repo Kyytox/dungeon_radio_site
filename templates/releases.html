@@ -25,9 +25,9 @@
     <main>
         <!-- Data Releases -->
         <section>
-            <div class="grid_relases">
+            <div class="grid-relases-page">
                 {% for release in releases_data %}
-                <div class="box-release">
+                <div class="box-release-page">
                     <a href="{{ release.Link }}" target="_blank">
                         <img src="{{ url_for('static', filename='images/' + release.Image) }}"
                             alt="{{ release.Titre }}">
