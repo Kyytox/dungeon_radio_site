@@ -176,7 +176,13 @@ section {
 }
 
 
-.box-paragraph {
+/*  */
+/*  */
+/*  */
+/*  */
+/* Blog */
+
+.blog-section {
     margin-bottom: 60px;
 }
 
@@ -185,6 +191,21 @@ section {
     margin-bottom: 5px;
 }
 
+.text-paragraph {
+    margin-bottom: 25px;
+}
+
+.img-paragraph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.img-blog {
+    width: 400px;
+    /* height: 300px; */
+}
 
 
 /*  */
