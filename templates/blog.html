@@ -12,16 +12,35 @@
     {% include 'navbar.html' %}
     <main>
         <section>
+
+            <!-- Data Blog -->
             {% for blog in blog_data %}
-            <div class="box-paragraph">
-                <div class="text-paragraph">
-                    <h4>{{ blog.Date }} : {{ blog.Titre }}</h4>
-                    <p>
-                        {{ blog.Text }}
-                    </p>
+
+            <div class="blog-section">
+                <div class="box-paragraph">
+                    <!-- <h4>{{ blog.Date }} : {{ blog.Titre }}</h4> -->
+                    <h4>{{ blog.Titre }}</h4>
+
+                    {% for text in blog.Text %}
+                    {% if "img src" in text %}
+                    <div class="img-paragraph">
+                        {{ text | safe }}
+                    </div>
+                    {% else %}
+                    <div class="text-paragraph">
+                        {{ text }}
+                    </div>
+                    {% endif %}
+
+
+                    {% endfor %}
                 </div>
             </div>
             {% endfor %}
+
+            <div class="link-blog">
+                <a href="{{ url_for('blog') }}">> > [All articles here] < <</a>
+            </div>
         </section>
 
     </main>
