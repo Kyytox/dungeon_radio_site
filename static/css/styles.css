@@ -514,6 +514,10 @@ section {
 
 @media screen and (max-width: 768px) {
 
+    main {
+        padding-top: 0;
+    }
+
     nav {
         flex-direction: column;
         padding: 10px;
@@ -524,24 +528,13 @@ section {
         margin: 10px 0;
     }
 
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
     nav ul li {
         margin: 10px 15px;
-    }
-
-    .box-event {
-        width: 45%;
-    }
-
-    .box-release-page {
-        width: 50%;
-    }
-
-    .footer-container {
-        flex-direction: column;
-    }
-
-    .footer-section {
-        margin: 20px 0;
     }
 
     nav img {
@@ -556,12 +549,47 @@ section {
         margin-top: 10px;
         margin-bottom: 0px;
     }
+
+    .box-event {
+        width: 45%;
+    }
+
+    .box-release {
+        width: 30%;
+    }
+
+    .box-release-page {
+        width: 50%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        margin: 20px 0;
+    }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 490px) {
 
     body {
         font-size: 12px;
+    }
+
+    main {
+        width: 90%;
+        flex-direction: column;
+        padding-top: 0;
+    }
+
+    .main-left {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .main-right {
+        width: 100%;
     }
 
     nav .title {
@@ -571,6 +599,15 @@ section {
 
     .box-event {
         width: 100%;
+    }
+
+    .box-release {
+        width: 45%;
+    }
+
+    .box-release img {
+        height: 120px;
+        width: 120px;
     }
 
     .box-release-page {
