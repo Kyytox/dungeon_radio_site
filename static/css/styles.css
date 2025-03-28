@@ -597,6 +597,12 @@ section {
         letter-spacing: 5px;
     }
 
+    section {
+        margin-top: 50px;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
     .box-event {
         width: 100%;
     }
@@ -611,7 +617,12 @@ section {
     }
 
     .box-release-page {
-        width: 100%;
+        width: 45%;
+    }
+
+    .box-release-page img {
+        height: 120px;
+        width: 120px;
     }
 
     .img-blog {
