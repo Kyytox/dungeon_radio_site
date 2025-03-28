@@ -40,12 +40,24 @@
             <!-- Data Blog -->
             {% for blog in blog_data %}
 
-            <div class="box-paragraph">
-                <div class="text-paragraph">
-                    <h4>{{ blog.Date }} : {{ blog.Titre }}</h4>
-                    <p>
-                        {{ blog.Text }}
-                    </p>
+            <div class="blog-section">
+                <div class="box-paragraph">
+                    <!-- <h4>{{ blog.Date }} : {{ blog.Titre }}</h4> -->
+                    <h4>{{ blog.Titre }}</h4>
+
+                    {% for text in blog.Text %}
+                    {% if "img src" in text %}
+                    <div class="img-paragraph">
+                        {{ text | safe }}
+                    </div>
+                    {% else %}
+                    <div class="text-paragraph">
+                        {{ text }}
+                    </div>
+                    {% endif %}
+
+
+                    {% endfor %}
                 </div>
             </div>
             {% endfor %}
@@ -55,9 +67,8 @@
             </div>
         </section>
 
-        <section>
-
-            <!-- Data Blog -->
+        <!-- Data Events -->
+        <!-- <section>
             <div class="grid-events">
                 {% for events in events_data %}
                 <div class="box-event">
@@ -70,8 +81,7 @@
             <div class="link-events">
                 <a href="{{ url_for('events') }}">> > [All events here] < <</a>
             </div>
-
-        </section>
+        </section> -->
 
     </main>
 
