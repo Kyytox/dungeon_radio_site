@@ -12,6 +12,9 @@ def get_data_content(file_name):
         # remove Date column
         data = data.drop(columns=["Date"])
 
+        # renverser l'order de la df
+        data = data[::-1]
+
     return data.to_dict("records")
 
 
