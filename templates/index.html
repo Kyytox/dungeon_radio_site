@@ -2,9 +2,46 @@
 <html lang="fr">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWC8Z05DZ8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RWC8Z05DZ8');
+    </script>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dungeon Radio Site</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Dungeon Radio - Label de Musique Lo-Fi, Reggae, Dub & Vaporwave</title>
+    <meta name="description"
+        content="Découvrez Dungeon Radio, label indépendant spécialisé en Lo-Fi, Reggae, Dub et Vaporwave. Sorties musicales, événements et actualités de la scène underground depuis 2017.">
+    <meta name="keywords"
+        content="Dungeon Radio, label musique, lo-fi, lofi, reggae, dub, vaporwave, underground music, electronic music, label indépendant, musique alternative">
+    <meta name="author" content="Dungeon Radio">
+
+    <!-- Open Graph / Facebook -->
+    <!-- <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dungeonradio.com/">
+    <meta property="og:title" content="Dungeon Radio - Label Lo-Fi, Reggae & Vaporwave">
+    <meta property="og:description"
+        content="Label indépendant spécialisé en Lo-Fi, Reggae, Dub et Vaporwave. Découvrez nos sorties et événements.">
+    <meta property="og:image" content="{{ url_for('static',filename='images/logo.png') }}"> -->
+
+    <!-- Twitter -->
+    <!-- <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dungeonradio.com/">
+    <meta property="twitter:title" content="Dungeon Radio - Label Lo-Fi, Reggae & Vaporwave">
+    <meta property="twitter:description"
+        content="Label indépendant spécialisé en Lo-Fi, Reggae, Dub et Vaporwave. Découvrez nos sorties et événements.">
+    <meta property="twitter:image" content="{{ url_for('static',filename='images/logo.png') }}"> -->
+
+    <link rel="canonical" href="https://dungeonradio.com/">
+    <link rel="icon" href="{{ url_for('static',filename='images/logo.png') }}" type="image/png">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
 </head>
 
@@ -15,8 +52,7 @@
 
     <!-- <main> -->
     <main>
-
-        <section>
+        <section aria-label="Releases - Dernières Sorties">
             <div class="grid_relases">
                 <!-- Data Releases -->
                 {% for release in releases_data %}
@@ -35,8 +71,7 @@
             </div>
         </section>
 
-        <section>
-
+        <section aria-label="Blog et Actualités">
             <!-- Data Blog -->
             {% for blog in blog_data %}
 

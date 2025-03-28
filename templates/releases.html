@@ -2,11 +2,23 @@
 <html lang="fr">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWC8Z05DZ8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RWC8Z05DZ8');
+    </script>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dungeon Radio Site</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
 </head>
+
 
 <body>
     {% include 'navbar.html' %}
