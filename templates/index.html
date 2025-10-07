@@ -1,28 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+  <head>
+    <script src="/js/matomo-tracker.js"></script>
 
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWC8Z05DZ8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-RWC8Z05DZ8');
-    </script>
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Meta Tags -->
-    <title>Dungeon Radio - Label de Musique Lo-Fi, Reggae, Dub & Vaporwave</title>
-    <meta name="description"
-        content="Découvrez Dungeon Radio, label indépendant spécialisé en Lo-Fi, Reggae, Dub et Vaporwave. Sorties musicales, événements et actualités de la scène underground depuis 2017.">
-    <meta name="keywords"
-        content="Dungeon Radio, label musique, lo-fi, lofi, reggae, dub, vaporwave, underground music, electronic music, label indépendant, musique alternative, music label, lo-fi, lofi, reggae, dub, vaporwave, underground music, electronic music, independent label, alternative music">
-    <meta name="author" content="Dungeon Radio">
+    <title>
+      Dungeon Radio - Label de Musique Lo-Fi, Reggae, Dub & Vaporwave
+    </title>
+    <meta
+      name="description"
+      content="Découvrez Dungeon Radio, label indépendant spécialisé en Lo-Fi, Reggae, Dub et Vaporwave. Sorties musicales, événements et actualités de la scène underground depuis 2017."
+    />
+    <meta
+      name="keywords"
+      content="Dungeon Radio, label musique, lo-fi, lofi, reggae, dub, vaporwave, underground music, electronic music, label indépendant, musique alternative, music label, lo-fi, lofi, reggae, dub, vaporwave, underground music, electronic music, independent label, alternative music"
+    />
+    <meta name="author" content="Dungeon Radio" />
 
     <!-- Open Graph / Facebook -->
     <!-- <meta property="og:type" content="website">
@@ -40,77 +36,73 @@
         content="Label indépendant spécialisé en Lo-Fi, Reggae, Dub et Vaporwave. Découvrez nos sorties et événements.">
     <meta property="twitter:image" content="{{ url_for('static',filename='images/logo.png') }}"> -->
 
-    <link rel="canonical" href="https://dungeonradio.com/">
-    <link rel="icon" href="{{ url_for('static',filename='images/logo.png') }}" type="image/png">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
-</head>
+    <link rel="canonical" href="https://dungeonradio.com/" />
+    <link
+      rel="icon"
+      href="{{ url_for('static',filename='images/logo.png') }}"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/styles.css') }}"
+    />
+  </head>
 
-<body>
-
+  <body>
     <!-- import html navbar -->
     {% include 'navbar.html' %}
 
     <!-- <main> -->
     <main>
+      <div class="main-left">
+        <section aria-label="Releases - Dernières Sorties">
+          <div class="grid-relases">
+            <!-- Data Releases -->
+            {% for release in releases_data %}
+            <div class="box-release">
+              <a href="{{ release.Link }}" target="_blank">
+                <img
+                  src="{{ url_for('static', filename='images/' + release.Image) }}"
+                  alt="{{ release.Titre }}"
+                />
+                <h4>{{ release.Titre }}</h4>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
 
-        <div class="main-left">
-            <section aria-label="Releases - Dernières Sorties">
-                <div class="grid-relases">
-                    <!-- Data Releases -->
-                    {% for release in releases_data %}
-                    <div class="box-release">
-                        <a href="{{ release.Link }}" target="_blank">
-                            <img src="{{ url_for('static', filename='images/' + release.Image) }}"
-                                alt="{{ release.Titre }}">
-                            <h4>{{ release.Titre }}</h4>
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div>
-
-                <!-- <div class="link-releases">
+          <!-- <div class="link-releases">
                     <a href="{{ url_for('releases') }}">>> [All releases here] << </a>
                 </div> -->
-            </section>
-        </div>
+        </section>
+      </div>
 
+      <div class="main-right">
+        <section aria-label="Blog et Actualités">
+          <!-- Data Blog -->
+          {% for blog in blog_data %}
 
-        <div class="main-right">
+          <div class="blog-section">
+            <div class="box-paragraph">
+              <!-- <h4>{{ blog.Date }} : {{ blog.Titre }}</h4> -->
+              <h4>{{ blog.Titre }}</h4>
 
-            <section aria-label="Blog et Actualités">
-                <!-- Data Blog -->
-                {% for blog in blog_data %}
+              {% for text in blog.Text %} {% if "img src" in text %}
+              <div class="img-paragraph">{{ text | safe }}</div>
+              {% else %}
+              <div class="text-paragraph">{{ text }}</div>
+              {% endif %} {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
 
-                <div class="blog-section">
-                    <div class="box-paragraph">
-                        <!-- <h4>{{ blog.Date }} : {{ blog.Titre }}</h4> -->
-                        <h4>{{ blog.Titre }}</h4>
-
-                        {% for text in blog.Text %}
-                        {% if "img src" in text %}
-                        <div class="img-paragraph">
-                            {{ text | safe }}
-                        </div>
-                        {% else %}
-                        <div class="text-paragraph">
-                            {{ text }}
-                        </div>
-                        {% endif %}
-
-
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endfor %}
-
-                <div class="link-blog">
-                    <a href="{{ url_for('blog') }}">> > [All articles here] < <</a>
-                </div>
-            </section>
-
-        </div>
-        <!-- Data Events -->
-        <!-- <section>
+          <div class="link-blog">
+            <a href="{{ url_for('blog') }}">> > [All articles here] < <</a>
+          </div>
+        </section>
+      </div>
+      <!-- Data Events -->
+      <!-- <section>
             <div class="grid-events">
                 {% for events in events_data %}
                 <div class="box-event">
@@ -124,9 +116,7 @@
                 <a href="{{ url_for('events') }}">> > [All events here] < <</a>
             </div>
         </section> -->
-
     </main>
-
 
     <!--  -->
     <!--  -->
@@ -134,6 +124,5 @@
     {% include 'footer.html' %}
 
     <script src="{{ url_for('static',filename='js/scripts.js') }}"></script>
-</body>
-
+  </body>
 </html>
