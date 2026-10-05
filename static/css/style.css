@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap");
+
+:root {
+  --dark: #2b2e38;
+  --cream: #f0e8d6;
+  --cream-2: #ebe3cc;
+  --gold: #c9a63f;
+  --pink: #e9747c;
+  --text: #2b2e38;
+  --light: #ffffff;
+  --grey: #d9d9d9;
+  --max: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--dark);
+  color: var(--light);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+  position: relative;
+}
+.site-header nav ul {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+.site-header nav a:hover {
+  color: var(--gold);
+}
+.logo {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.logo img {
+  height: 40px;
+  width: auto;
+}
+.header-social {
+  position: absolute;
+  top: 0.2rem;
+  right: 0;
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--pink);
+}
+
+/* ---------- Titres ---------- */
+.section-title {
+  font-weight: 500;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: 0.01em;
+  margin-bottom: 2rem;
+}
+.section {
+  padding-block: 3.5rem;
+}
+.section--dark {
+  background: var(--dark);
+  color: var(--light);
+}
+.section--dark .section-title {
+  color: var(--light);
+}
+.section--cream-2 {
+  background: var(--cream-2);
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.6rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.btn--gold {
+  border: 2px solid var(--gold);
+  color: var(--gold);
+}
+.btn--gold:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+.btn--pink {
+  border: 1px solid var(--pink);
+  color: var(--pink);
+  font-size: 0.7rem;
+}
+.btn--pink:hover {
+  background: var(--pink);
+  color: var(--light);
+}
+
+/* ---------- Dernières sorties : GRILLE ---------- */
+.latest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.release-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.release-card img {
+  width: 100%;
+  object-fit: cover;
+  background: #444;
+}
+.release-card .meta {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: #e6e6e6;
+}
+.release-card .meta p + p {
+  margin-top: 0.5rem;
+}
+.release-card .btn {
+  align-self: flex-start;
+}
+
+/* ---------- Releases (boutique) ---------- */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2rem;
+}
+.product {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.product img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: 0.6rem;
+}
+
+/* ---------- Artistes & évènements ---------- */
+.duo {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+.duo-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+.artist img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #000;
+}
+.artist p {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.artist-styles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.style-badge {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #fff;
+  background: #666;
+}
+
+.event img {
+  width: 260px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: var(--grey);
+}
+
+/* ---------- Playlist ---------- */
+.page-title {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 500;
+  margin-block: 2rem;
+}
+.playlist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 3rem;
+  max-width: 820px;
+  margin: 3rem auto 4rem;
+  padding-inline: 1rem;
+}
+.playlist-grid a,
+.playlist-grid .placeholder {
+  display: block;
+  aspect-ratio: 1;
+  background: var(--grey);
+}
+.playlist-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.playlist-grid a:hover {
+  opacity: 0.9;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--dark);
+  color: var(--light);
+  padding-block: 2.5rem 1.5rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.6fr;
+  gap: 2rem;
+  align-items: start;
+}
+.footer-grid h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.footer-grid li,
+.footer-grid p {
+  font-size: 0.7rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+.contact-form input,
+.contact-form textarea {
+  font-family: inherit;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 0.6rem 0.7rem;
+}
+.contact-form ::placeholder {
+  color: var(--gold);
+  opacity: 0.85;
+}
+.contact-form .full {
+  grid-column: 1 / -1;
+}
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.contact-form .btn {
+  grid-column: 2;
+  justify-self: end;
+  border-width: 2px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  color: var(--gold);
+  font-size: 1.3rem;
+}
+.legal {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .site-header .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-form .btn {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+  }
+}
+@media (max-width: 520px) {
+  .playlist-grid {
+    grid-template-columns: 1fr;
+  }
+  .site-header nav ul {
+    gap: 0.9rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,33 @@
+<header class="site-header">
+  <div class="container">
+    <nav aria-label="Navigation gauche">
+      <ul>
+        <li><a href="{{ url_for('releases') }}">Releases</a></li>
+        <li><a href="{{ url_for('artists') }}">Artistes</a></li>
+        <li><a href="{{ url_for('events') }}">Évènements</a></li>
+      </ul>
+    </nav>
+
+    <a
+      href="{{ url_for('index') }}"
+      class="logo"
+      aria-label="Dungeon Radio - accueil"
+    >
+      Dungeon Radio {#
+      <img
+        src="{{ url_for('static', filename='images/logo.png') }}"
+        alt="Dungeon Radio"
+      />
+      #}
+    </a>
+
+    <nav aria-label="Navigation droite">
+      <ul>
+        <li><a href="{{ url_for('blog') }}">Blog</a></li>
+        <li><a href="{{ url_for('about') }}">A propos</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+

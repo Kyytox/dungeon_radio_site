@@ -1,0 +1,46 @@
+{% macro btn_more(href, style="gold") %}
+
+<a href="{{ href }}" class="btn btn--{{ style }}" target="_blank"
+  >En savoir plus</a
+>
+{% endmacro %} {% macro release_card(r) %}
+
+<article class="release-card">
+  <img src="{{ r.cover }}" alt="Cassette {{ r.title }}" />
+  <div class="meta">
+    <p>{{ r.artist }} : {{ r.title }}</p>
+    <p>{{ r.desc }}</p>
+    <p>Format: {{ r.format }}</p>
+  </div>
+  {{ btn_more(r.link) }}
+</article>
+{% endmacro %} {% macro product_card(p) %}
+<a href="{{ url_for('release') }}" class="product">
+  <img
+    src="{{ url_for('static', filename='images/' ~ p.image) }}"
+    alt="{{ p.title }}"
+  />
+  <p>{{ p.artist }}<br />{{ p.title }}</p>
+  <p>{{ p.price }}</p>
+</a>
+{% endmacro %} {% macro artist_card(a) %}
+<article class="duo-item artist">
+  <img src="{{ a.cover }}" alt="{{ a.name }}" />
+  <p>{{ a.name }}</p>
+  <div class="artist-styles">
+    {% for style in a.styles.split(',') %} {% set s = style | trim %}
+    <span class="style-badge">{{ s }}</span>
+    {% endfor %}
+  </div>
+
+  {{ btn_more(a.link) }}
+</article>
+{% endmacro %} {% macro event_card(e) %}
+<article class="duo-item event">
+  <img
+    src="{{ url_for('static', filename='images/' ~ e.image) }}"
+    alt="Affiche {{ e.name }}"
+  />
+  {{ btn_more(url_for('event')) }}
+</article>
+{% endmacro %}

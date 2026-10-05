@@ -5,15 +5,33 @@ from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 
-def get_data_content(file_name):
-    data = pd.read_csv(f"./static/data/{file_name}.csv")
+# def get_data_content(file_name):
+#     data = pd.read_csv(f"./static/data/{file_name}.csv")
+#
+#     if "blog" in file_name:
+#         # remove Date column
+#         data = data.drop(columns=["Date"])
+#
+#         # renverser l'order de la df
+#         data = data[::-1]
+#
+#     return data.to_dict("records")
+
+
+def get_data_content(file_name, sheet_name=0):
+    # Lecture du xlsx (sheet passée en param, 1ère ligne = noms de colonnes)
+    data = pd.read_excel(
+        f"./static/data/{file_name}.xlsx",
+        sheet_name=sheet_name,
+        header=0,  # première ligne = noms des colonnes
+    )
 
     if "blog" in file_name:
         # remove Date column
         data = data.drop(columns=["Date"])
 
         # renverser l'order de la df
-        data = data[::-1]
+        data = data.iloc[::-1]
 
     return data.to_dict("records")
 
@@ -71,19 +89,22 @@ def convert_image_refs_to_html(text):
 def index():
 
     # Content Blog
-    data_blog = get_data_content("content_blog")
-    # Convert image references in content
-    for post in data_blog:
-        post["Text"] = convert_image_refs_to_html(post["Text"])
+    data_releases = get_data_content("content_site", 0)
+    # print("data_releases", data_releases)
 
-    data_events = get_data_content("content_events")
-    data_releases = get_data_content("content_releases")
+    data_artists = get_data_content("content_site", 1)
+    # print("data_artists", data_artists)
+
+    # Convert image references in content
+    # for post in data_blog:
+    # post["Text"] = convert_image_refs_to_html(post["Text"])
 
     return render_template(
         "index.html",
-        blog_data=data_blog,
-        events_data=data_events,
-        releases_data=data_releases,
+        releases=data_releases,
+        artists=data_artists,
+        # events_data=data_events,
+        # releases_data=data_releases,
     )
 
 
@@ -109,6 +130,16 @@ def releases():
 def events():
     data_events = get_data_content("content_events")
     return render_template("events.html", events_data=data_events)
+
+
+@app.route("/artists")
+def artists():
+    return render_template("index.html")
+
+
+@app.route("/about")
+def about():
+    return render_template("index.html")
 
 
 @app.route("/contact")
